@@ -1,167 +1,46 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>For My best part</title>
-  <style>
-    :root {
-      --pink: #f7c8e0;
-      --deep-pink: #b33666;
-      --bg: #fff0f5;
-      --text-dark: #2d2d2d;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Georgia', serif;
-      background: linear-gradient(to right, var(--pink), var(--bg));
-      color: var(--text-dark);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      overflow-x: hidden;
-      padding: 1rem;
-    }
-
-    header {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      color: var(--deep-pink);
-      margin-bottom: 0.5rem;
-    }
-
-    .subtitle {
-      font-size: 1.1rem;
-      color: #555;
-    }
-
-    .photo-container {
-      margin: 2rem 0;
-      width: 100%;
-      max-width: 500px;
-    }
-
-    .photo-container img {
-      width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .lyrics-scroll-container {
-      width: 100%;
-      overflow: hidden;
-      max-width: 600px;
-      border-radius: 15px;
-      background: #fff;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      margin: 2rem 0;
-      height: 50px;
-      display: flex;
-      align-items: center;
-    }
-
-    .lyrics-scroll-text {
-      display: inline-block;
-      white-space: nowrap;
-      padding-left: 100%;
-      animation: scrollLyrics 43s linear infinite;
-      font-size: 1.3rem;
-      padding-right: 100%;
-      color: var(--deep-pink);
-    }
-
-    @keyframes scrollLyrics {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
-    }
-
-    .paused {
-      animation-play-state: paused !important;
-    }
-
-    audio {
-      margin-top: 1rem;
-    }
-
-    footer {
-      margin-top: auto;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #888;
-      text-align: center;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      .lyrics-scroll-text {
-        font-size: 1.1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    
+    <title>My Web</title>
 </head>
+
 <body>
+   <div class="page1">
+    <nav>
+        <a href="">
+            <h1 class="logo">Creovate Studios</h1>
+    </a>
+        <div class="navigation">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+        </div>
+    </nav>
 
-  <header>
-    <h1>Untuk Kamu,best part (Imelda Choirunnisa Rohman)</h1>
-    <p class="subtitle">Sorry,love & proud of you🤍🤍</p>
-  </header>
+   <div class="main">
+    <div class="left">
+        <h1>Creovate | Create & Innovate </h1>
+        <p>We are a creative-driven team committed to turning imagination into meaningful impact. Whether it's digital products, branding, or content, we combine fresh ideas with smart strategy to build solutions that are not only visually engaging but also relevant and purposeful.</p>
 
-  <div class="photo-container">
-    <img src="pap1.jpg" alt="Foto Bucin" />
-  </div>
-
-  <!-- LIRIK BERJALAN -->
-  <div class="lyrics-scroll-container">
-    <div class="lyrics-scroll-text" id="scrollingLyrics">
-      I know I'm not perfect But you still chose me Girl, this is not an act Oh, I want to be the last................For youuu~~~~~~~~~~~, for youuu~~~~~~~~~~~~~~~~~~~~~~~~~~And often I keep thinking am I worth waiting for? But you keep motivating me to be the best of me Of me........, of me. 💞
+        <div class="btn">
+            <button id="contact">contact us</button>
+            <button id="started">get Started</button>
+        </div>
     </div>
-  </div>
-
-  <!-- AUDIO -->
-  <audio id="bgm" controls autoplay loop>
-    <source src="musik2.mp3" type="audio/mpeg" />
-    Browser kamu tidak mendukung audio.
-  </audio>
-
-  <footer>
-    &copy; 2025 - Thanks for loving me babe💘
-  </footer>
-
-  <!-- SCRIPT -->
-  <script>
-    const audio = document.getElementById("bgm");
-    const scrollingLyrics = document.getElementById("scrollingLyrics");
-
-    // Update animasi saat audio diputar atau dipause
-    audio.addEventListener("play", () => {
-      scrollingLyrics.classList.remove("paused");
-    });
-
-    audio.addEventListener("pause", () => {
-      scrollingLyrics.classList.add("paused");
-    });
-
-    // Saat halaman dimuat, cek apakah lagu autoplay berhasil
-    window.addEventListener("load", () => {
-      if (audio.paused) {
-        scrollingLyrics.classList.add("paused");
-      }
-    });
-  </script>
-
+    <div class="right">
+        <spline-viewer id="threeD" url="https://prod.spline.design/vjaval4nwHpoID8W/scene.splinecode"></spline-viewer>
+    </div>
+   </div>
+</div> 
 </body>
-</html>>
+
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.48/build/spline-viewer.js"></script>
+
+<script src="./script.js"></script>
+
+</html>
